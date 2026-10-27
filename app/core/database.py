@@ -2,10 +2,13 @@ from pymongo import AsyncMongoClient
 
 from app.core.config import settings
 
-
 client = AsyncMongoClient(settings.MONGODB_URI)
 
 db = client[settings.MONGODB_DB]
+
+
+def get_database():
+    return db
 
 
 async def connect_db():
